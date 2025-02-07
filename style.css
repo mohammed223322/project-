@@ -1,0 +1,1371 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* الخلفية العامة */
+
+
+/* تنسيق النصوص الأساسية */
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+/* الهيدر */
+/* header {
+    background-color: #004d40;
+    color: white;
+    padding: 15px 0;
+}
+header h1 {
+    text-align: center;
+    margin: 2px;
+}
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+    
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #80cbc4;
+} */
+
+/* تنسيق الهيدر */
+header {
+    position: fixed; /* يجعل الهيدر ثابتًا في أعلى الصفحة */
+    top: 0; /* يثبته عند أعلى الصفحة */
+    left: 0;
+    width: 100%; /* يجعله يمتد بعرض الشاشة */
+    background-color: #004d40; /* لون الخلفية */
+    color: white; /* لون النص */
+    padding: 10px 0; /* مسافة داخلية عمودية */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة ظل للهيدر */
+    z-index: 1000; /* يجعله فوق جميع العناصر */
+}
+
+/* تنسيق عنوان الهيدر */
+header h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 1.8em; /* حجم خط أكبر */
+    font-weight: bold;
+    letter-spacing: 1px; /* تباعد بين الحروف */
+}
+
+/* تنسيق القائمة داخل الهيدر */
+header nav ul {
+    display: flex; /* ترتيب العناصر أفقياً */
+    justify-content: center; /* توسيط العناصر أفقياً */
+    list-style-type: none; /* إزالة التعداد النقطي */
+    margin: 10px 0 0 0; /* مسافة بين القائمة والعنوان */
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px; /* مسافة بين عناصر القائمة */
+}
+
+header nav ul li a {
+    text-decoration: none; /* إزالة التسطير */
+    color: white; /* لون النص */
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 10px; /* مسافة داخلية للرابط */
+    border-radius: 3px; /* زوايا دائرية */
+    transition: background-color 0.3s ease, color 0.3s ease; /* تأثير عند التمرير */
+}
+
+/* تأثير الروابط عند التمرير */
+header nav ul li a:hover {
+    background-color: white; /* تغيير لون الخلفية عند التمرير */
+    color: #004d40; /* تغيير لون النص عند التمرير */
+}
+
+main {
+    padding-top: 84px; /* يعادل ارتفاع الهيدر */
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #007BFF;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .search-form:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    color: #333;
+    border-right: 2px solid #007BFF;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .search-input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  .search-input:focus {
+    background-color: #f0f8ff;
+    color: #007BFF;
+  }
+  
+  .search-button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #007BFF;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  .search-button:active {
+    transform: scale(1);
+  }
+  
+  .search-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* يجعل الأيقونة بيضاء */
+  }
+  
+  
+
+
+
+.books {
+    margin: 20px 0;
+}
+
+.books h3 {
+    text-align: center;
+    color: #004d40;
+} 
+
+.hero {
+    text-align: center;
+    background-color: #00695c;
+    color: white;
+    padding: 50px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* مسافة بين الصور والنص */
+}
+
+.hero-image {
+    width: 200px; /* عرض الصورة */
+    height: 220px; /* طول الصورة */
+    object-fit: cover;
+    border-radius: 8px; /* زوايا مستديرة للصورة */
+}
+
+.hero-text {
+    max-width: 600px; /* تحديد عرض النص */
+    text-align: center; /* محاذاة النص في المنتصف */
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    /* color: #666; */
+}
+
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.book-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* .book-cover {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+} */
+
+.book-cover {
+    width: 200px; /* عرض الصورة */
+    height: 300px; /* طول الصورة */
+    object-fit: cover; /* لجعل الصورة تناسب الإطار بدون تشوه */
+    border-radius: 4px; /* لجعل الزوايا مستديرة */
+}
+
+
+.book-item h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.book-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* .book-list div {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.book-list .book {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.book-list .book img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.book-list .book h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.book-list .book p {
+    color: #555;
+    font-size: 0.9rem;
+} */
+
+/* تنسيق القسم الرئيسي */
+.edit-user-form {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+/* تنسيق العنوان */
+.formM-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* تنسيق النموذج */
+.form-edit-user {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* تنسيق المجموعات */
+.formM-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* تنسيق العناوين داخل المجموعات */
+.form-labelL {
+    font-size: 16px;
+    color: #333;
+}
+
+/* تنسيق المدخلات */
+.formM-input, .formM-select {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+/* تأثير التركيز على المدخلات */
+.formM-input:focus, .formM-select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* تنسيق الأزرار */
+.submitT-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submitT-button:hover {
+    background-color: #45a049;
+}
+
+.submitT-button:focus {
+    outline: none;
+}
+
+/* تنسيق زر الإلغاء */
+.btn-cancel {
+    background-color: #f44336;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-cancel:hover {
+    background-color: #e53935;
+}
+
+.btn-cancel:focus {
+    outline: none;
+}
+
+
+/* تنسيق القسم الرئيسي */
+.add-user-form {
+    background-color: #f5f5f5;
+    padding: 15px 20px; /* تقليل padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* تقليل العرض إلى 500px */
+    width: 100%;
+    margin: 40px auto;
+}
+
+/* تنسيق العنوان */
+.form-title {
+    text-align: center;
+    font-size: 18px; /* تقليل حجم الخط */
+    margin-bottom: 15px; /* تقليل المسافة أسفل العنوان */
+    color: #333;
+}
+
+/* تنسيق النموذج */
+.form-add-user {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* تقليل الفجوات بين المدخلات */
+}
+
+/* تنسيق المجموعات */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* تقليل الفجوات */
+}
+
+/* تنسيق العناوين داخل المجموعات */
+.form-label {
+    font-size: 13px; /* تقليل حجم الخط */
+    color: #333;
+}
+
+/* تنسيق المدخلات */
+.form-input, .form-select {
+    padding: 8px; /* تقليل المسافات داخل المدخلات */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 13px; /* تقليل حجم الخط */
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+/* تأثير التركيز على المدخلات */
+.form-input:focus, .form-select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* تنسيق زر الإرسال */
+.submit-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 8px 15px; /* تقليل padding */
+    border: none;
+    border-radius: 5px;
+    font-size: 13px; /* تقليل حجم الخط */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* التأكد من أن الزر يشغل العرض الكامل */
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.submit-button:focus {
+    outline: none;
+}
+
+/* تنسيق رسالة النجاح أو الخطأ */
+.message {
+    font-size: 13px;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 15px; /* تقليل المسافة أسفل الرسالة */
+}
+
+/* إضافة فاصل بين الأزرار */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* تقليل المسافات بين الأزرار */
+}
+
+
+
+
+
+footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* تحسين العرض للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 30px 0;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* ضبط التباعد والتوسيط
+.search-form {
+    margin: 20px 0;
+    max-width: 600px;
+    width: 100%;
+} */
+
+/* تنسيق حقل الإدخال */
+.search-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+/* تأثير عند التركيز */
+.search-input:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+}
+
+/* تنسيق زر البحث */
+.search-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* تأثير عند التمرير */
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* توسيط النص */
+.text-center {
+    text-align: center;
+}
+
+/* مسافة تحت النص */
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+
+
+/* الخاص بتسجل الدخول */
+/* تنسيقات العنوان */
+.login-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* تنسيق النموذج الرئيسي */
+.login-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f9f9f9;/* لون خلفية فاتح*/
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+}
+
+/* تنسيق الحقول */
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-input:focus {
+    border-color: #4CAF50; /* تغيير لون الحافة عند التركيز */
+    outline: none;
+}
+
+/* تنسيق زر الإرسال */
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+    background-color: #45a049; /* لون مختلف عند تمرير الفأرة */
+}
+
+/* تحسين مظهر خلفية النموذج */
+.login-form {
+    background-color: #ffffff;
+    padding: 30px 0;
+}
+
+/*  الخاص بانشاء حساب */
+/* تنسيق العناصر الرئيسية */
+.register-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.register-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.register-form-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.form-input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #fff;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.submit-button:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .register-form-container {
+        padding: 20px;
+    }
+
+    .register-title {
+        font-size: 1.5em;
+    }
+
+    .form-input {
+        font-size: 0.9rem;
+    }
+
+    .submit-button {
+        font-size: 1rem;
+    }
+}
+
+/* تنسيق عام للنموذج */
+/* .pagination-form {
+    margin: 20px 0;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+
+.pagination-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.pagination-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+
+.page-number {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+
+.pagination-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+} */
+
+
+.error-message {
+    color: #ff4d4d; /* لون الخط باللون الأحمر */
+    font-size: 14px; /* حجم الخط */
+    font-family: 'Arial', sans-serif; /* خط احترافي */
+    margin-top: 5px; /* مسافة صغيرة بين الرسالة والحقل */
+    display: block; /* عرض الرسالة بشكل واضح */
+    animation: fadeIn 0.3s ease-in-out; /* تأثير ظهور الرسالة */
+}
+/* تأثير ظهور الرسالة */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* تنسيق إضافي للحقل عند وجود خطأ */
+input.form-input.error-border {
+    border: 1px solid #ff4d4d; /* تغيير لون الحدود إلى الأحمر */
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.5); /* تأثير الظل */
+}
+
+/* تحسين تنسيق زر الإرسال */
+.submit-button {
+    background-color: #4CAF50; /* لون الزر الأساسي */
+    color: white; /* لون النص */
+    padding: 10px 20px; /* المسافات داخل الزر */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* زوايا مستديرة */
+    font-size: 16px; /* حجم الخط */
+    cursor: pointer; /* تغيير المؤشر إلى يد */
+    transition: background-color 0.3s ease; /* تأثير التغيير */
+}
+
+.submit-button:hover {
+    background-color: #45a049; /* تغيير لون الزر عند المرور */
+}
+/* تحسين تنسيق النموذج */
+.login-form-container {
+    width: 100%;
+    max-width: 400px; /* تحديد عرض النموذج */
+    margin: 0 auto; /* توسيط النموذج */
+    background: #f9f9f9; /* لون خلفية النموذج */
+    padding: 20px; /* المسافات الداخلية */
+    border: 1px solid #ddd; /* حدود خفيفة */
+    border-radius: 10px; /* زوايا مستديرة */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* تأثير الظل */
+}
+
+/* تنسيقات عامة */
+/* body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+} */
+
+/* تنسيق الجدول */
+.borrowed-books-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* تنسيق رأس الجدول */
+.borrowed-books-table .table-header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.borrowed-books-table th,
+.borrowed-books-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* تنسيق صفوف الجدول */
+.borrowed-books-table .table-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.borrowed-books-table .table-row:hover {
+    background-color: #f1f1f1;
+}
+
+/* تنسيق الروابط */
+/* .return-link {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+} */
+
+/* .return-link:hover {
+    text-decoration: underline;
+} */
+
+/* .returned-text {
+    color: #4CAF50;
+    font-weight: bold;
+} */
+
+/* تنسيق الهواتف */
+@media (max-width: 768px) {
+    .borrowed-books-table th,
+    .borrowed-books-table td {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+/* تنسيق العنوان (H2) */
+.welcome-message {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق النص الوصفي (P) */
+.description-text {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    object-fit: cover;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #3498db; /* لون الخلفية */
+    color: #ffffff; /* لون النص */
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px; /* مسافة داخلية */
+    border-radius: 5px; /* زوايا مستديرة */
+    font-size: 16px; /* حجم النص */
+    font-weight: bold; /* نص عريض */
+    transition: background-color 0.3s, transform 0.2s; /* تأثير الانتقال */
+    border: none; /* إزالة الحدود */
+    cursor: pointer; /* تغيير شكل المؤشر */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* ظل */
+}
+
+.btn:hover {
+    background-color: #2c8ac9; /* لون عند التمرير */
+    transform: scale(1.05); /* تكبير الزر قليلاً عند التمرير */
+}
+
+.btn:active {
+    background-color: #1e608f; /* لون عند النقر */
+    transform: scale(0.95); /* تقليل الحجم قليلاً عند النقر */
+}
+
+/* تنسيق الجدول */
+/* .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: right;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.styled-table thead tr {
+    background-color: #4CAF50;
+    color: white;
+    text-align: right;
+    font-weight: bold;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+}
+
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4CAF50;
+}
+
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+
+
+.btn-action {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-action.edit {
+    background-color: #4CAF50;
+}
+
+.btn-action.edit:hover {
+    background-color: #45a049;
+}
+
+.btn-action.delete {
+    background-color: #e74c3c;
+}
+
+.btn-action.delete:hover {
+    background-color: #c0392b;
+} */
+
+
+
+/* تنسيق الجدول */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: right;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed; 
+}
+ 
+
+/* تنسيق الرأس */
+.styled-table thead tr {
+    background-color: #4CAF50;
+    color: white;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* تنسيق الأعمدة بشكل مرن */
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; /* لضبط النص داخل الأعمدة إذا كان طويلاً */
+}
+
+/* تنسيق الأعمدة */
+.styled-table td {
+    max-width: 200px; /* ضبط أقصى عرض للعمود */
+}
+
+/* تنسيق الرأس */
+.styled-table th {
+    min-width: 120px; /* تحديد عرض الحد الأدنى للأعمدة */
+}
+
+/* تنسيق الصفوف */
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4CAF50;
+}
+
+/* تأثير عند التمرير */
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+
+/* أزرار الإجراءات */
+.btn-action {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-action.edit {
+    background-color: #4CAF50;
+}
+
+.btn-action.edit:hover {
+    background-color: #45a049;
+}
+
+.btn-action.delete {
+    background-color: #e74c3c;
+}
+
+.btn-action.delete:hover {
+    background-color: #c0392b;
+}
+
+
+/* تنسيق الحاوية */
+.containerAdd_book {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* عنوان النموذج */
+.form-title {
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* تنسيق الحقول */
+.form-style label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    outline: none;
+}
+
+/* زر الإرسال */
+.form-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-button:hover {
+    background-color: #45a049;
+}
+
+/* تحسين العرض على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .containerAdd_book {
+        padding: 15px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .form-input {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .form-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+.no-account {
+    text-align: center; /* محاذاة النص في المنتصف */
+    font-size: 1rem; /* حجم النص */
+    margin-top: 20px; /* مسافة أعلى الفقرة */
+    color: #666; /* لون النص */
+}
+
+.no-account .register-link {
+    color: #007BFF; /* لون الرابط */
+    text-decoration: none; /* إزالة الخط السفلي الافتراضي */
+    font-weight: bold; /* جعل النص عريضًا */
+    transition: color 0.3s ease; /* تأثير عند مرور المؤشر */
+}
+
+.no-account .register-link:hover {
+    color: #0056b3; /* لون عند تمرير الفأرة */
+}
+
+
+/* تنسيق الرابط الأساسي */
+.borrow-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* الرابط في حال كان المستخدم مسجل الدخول */
+.borrow-link.available {
+    background-color: #28a745; /* لون أخضر */
+    color: #fff;
+    border: 2px solid #28a745;
+}
+
+.borrow-link.available:hover {
+    background-color: #218838; /* لون أخضر داكن عند التمرير */
+    border-color: #1e7e34;
+    text-decoration: underline;
+}
+
+/* الرابط في حال لم يكن المستخدم مسجل الدخول */
+.borrow-link.not-logged-in {
+    background-color: #ffc107; /* لون أصفر */
+    color: #000;
+    border: 2px solid #ffc107;
+}
+
+.borrow-link.not-logged-in:hover {
+    background-color: #e0a800; /* لون أصفر داكن عند التمرير */
+    border-color: #d39e00;
+    text-decoration: underline;
+}
+
+/* رسالة عند عدم وجود كتب متاحة */
+.no-books-message {
+    color: #6c757d; /* لون رمادي */
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* تنسيق زر إرجاع الكتاب */
+.return-link {
+    display: inline-block;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #4c8bfd, #0056b3); /* تدرج لوني */
+    color: #ffffff; /* لون النص */
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none; /* إزالة الخط السفلي */
+    border-radius: 8px; /* زوايا مستديرة */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    transition: all 0.3s ease; /* تأثير الحركة */
+}
+.return-link:hover {
+    background-color: #0056b3; /* لون أغمق عند التمرير */
+}
+
+/* تنسيق النص عند إرجاع الكتاب */
+.returned-text {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #28a745; /* لون أخضر */
+    color: #fff; /* نص أبيض */
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px; /* زوايا مستديرة */
+    text-align: center; /* محاذاة النص في الوسط */
+}
+
+
+/* .drop {
+    position: relative;
+   }
+   
+.drop .bt1 {
+    background: linear-gradient(135deg, #04aa04, #02a602);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+   }
+   
+.drop .bt1:hover {
+    transform: scale(1.05); 
+    background-color: #033d03;
+   }
+   
+.drop .content {
+    
+    background-color: #333;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+   }
+   
+.drop:hover .content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+   }
+   
+.content a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+   }
+   
+.content a:hover {
+    background-color: #04aa04;
+   } */
