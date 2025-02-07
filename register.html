@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>المكتبة الإلكترونية</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.php">الرئيسية</a></li>
+                    <li><a href="loginHtml.php">تسجيل الدخول</a></li>
+                    <li><a href="register.html">إنشاء حساب</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-form">
+            <div class="container">
+                <h2 class="register-title">إنشاء حساب</h2>
+                <div id="responseMessage" style="color: red; font-weight: bold; margin-bottom: 10px;"></div>
+                <form id="registerForm" class="login-form-container" enctype="multipart/form-data">
+                    <label for="name" class="form-label">الاسم:</label>
+                    <input 
+                    type="text"
+                    id="name" 
+                    name="name" 
+                    class="form-input" 
+                    placeholder="أدخل اسمك "
+                    required>
+                    <small id="nameError" class="error-message"></small>
+
+                    <label for="email" class="form-label">البريد الإلكتروني:</label>
+                    <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="form-input" 
+                    placeholder="أدخل البريد الإلكتروني"
+                    required>
+                    <small id="emailError" class="error-message"></small>
+
+                    <label for="password" class="form-label">كلمة المرور:</label>
+                    <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    class="form-input" 
+                    placeholder="أدخل كلمة المرور"
+                    required>
+                    <small id="passwordError" class="error-message"></small>
+
+                    <label for="confirm_password" class="form-label">تأكيد كلمة المرور:</label>
+                    <input 
+                    type="password" 
+                    id="confirm_password" 
+                    name="confirm_password" 
+                    class="form-input" 
+                    placeholder="أعد إدخال كلمة المرور"
+                    required>
+                    <small id="confirmPasswordError" class="error-message"></small>
+
+                    <label for="profile_picture" class="form-label">صورة الملف الشخصي (اختياري):</label>
+                    <input 
+                    type="file" 
+                    id="profile_picture" 
+                    name="profile_picture" 
+                    class="form-input">
+                    <small id="profilePictureError" class="error-message"></small>
+
+                    <button type="submit" class="submit-button">إنشاء الحساب</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2024 المكتبة الإلكترونية</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // منع التحديث الافتراضي للصفحة
+
+            const formData = new FormData(this);
+            const responseMessage = document.getElementById("responseMessage");
+
+            // إزالة أي تنسيقات سابقة
+            document.querySelectorAll(".form-input").forEach((input) => {
+                input.classList.remove("error-border");
+            });
+            document.querySelectorAll(".error-message").forEach((small) => {
+                small.textContent = "";
+            });
+
+            fetch("register.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    responseMessage.style.color = "green";
+                    responseMessage.textContent = data.message;
+                    setTimeout(() => {
+                        window.location.href = "loginHtml.php";
+                    }, 2000); // الانتقال إلى صفحة تسجيل الدخول بعد 2 ثانية
+                } else if (data.errors) {
+                    // عرض رسائل الخطأ على الحقول المناسبة
+                    if (data.errors.name) {
+                        const nameInput = document.getElementById("name");
+                        nameInput.classList.add("error-border");
+                        document.getElementById("nameError").textContent = data.errors.name;
+                    }
+                    if (data.errors.email) {
+                        const emailInput = document.getElementById("email");
+                        emailInput.classList.add("error-border");
+                        document.getElementById("emailError").textContent = data.errors.email;
+                    }
+                    if (data.errors.password) {
+                        const passwordInput = document.getElementById("password");
+                        passwordInput.classList.add("error-border");
+                        document.getElementById("passwordError").textContent = data.errors.password;
+                    }
+                    if (data.errors.confirm_password) {
+                        const confirmPasswordInput = document.getElementById("confirm_password");
+                        confirmPasswordInput.classList.add("error-border");
+                        document.getElementById("confirmPasswordError").textContent = data.errors.confirm_password;
+                    }
+                    if (data.errors.profile_picture) {
+                        const profilePictureInput = document.getElementById("profile_picture");
+                        profilePictureInput.classList.add("error-border");
+                        document.getElementById("profilePictureError").textContent = data.errors.profile_picture;
+                    }
+                } else {
+                    responseMessage.style.color = "red";
+                    responseMessage.textContent = data.message;
+                }
+            })
+            .catch(error => {
+                responseMessage.style.color = "red";
+                responseMessage.textContent = "حدث خطأ أثناء الاتصال بالخادم.";
+            });
+        });
+    </script>
+</body>
+</html>
